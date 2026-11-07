@@ -1,0 +1,24 @@
+import { useEffect, useState, type RefObject } from 'react';
+
+/** Tracks an element's content box size with ResizeObserver. */
+export function useElementSize(ref: RefObject<HTMLElement | null>): {
+  width: number;
+  height: number;
+} {
+  const [size, setSize] = useState({ width: 0, height: 0 });
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (!entry) return;
+      const { width, height } = entry.contentRect;
+      setSize((prev) =>
+        prev.width === width && prev.height === height ? prev : { width, height },
+      );
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref]);
+  return size;
+}

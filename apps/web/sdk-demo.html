@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>photoditor-buddy SDK demo</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        font-family: system-ui, sans-serif;
+        background: #f4f4f5;
+        color: #18181b;
+      }
+      header {
+        flex: none;
+        padding: 10px 16px;
+        background: #fff;
+        border-bottom: 1px solid #e4e4e7;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: 14px;
+      }
+      button {
+        height: 32px;
+        padding: 0 12px;
+        border-radius: 8px;
+        border: 1px solid #d4d4d8;
+        background: #fff;
+        cursor: pointer;
+      }
+      #editor {
+        flex: 1;
+        min-height: 0;
+      }
+      #result {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      #result img {
+        height: 32px;
+        border-radius: 6px;
+        border: 1px solid #d4d4d8;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>Host website</strong>
+      <button id="load-sample">Load sample</button>
+      <button id="export">Ask editor to export</button>
+      <div id="result"></div>
+    </header>
+    <div id="editor"></div>
+    <script type="module" src="./src/sdk-demo.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "@photoditor-buddy/proxy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Optional tiny relay for providers that forbid browser calls (fal.ai, Replicate). Not required for Gemini or OpenAI.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node --experimental-strip-types src/server.ts",
+    "start": "node --experimental-strip-types src/server.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.1",
+    "hono": "^4.13.8"
+  }
+}

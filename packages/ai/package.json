@@ -1,0 +1,17 @@
+{
+  "name": "@photoditor-buddy/ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI providers (Gemini, OpenAI, local in-browser models), key vault and task catalogue.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.0",
+    "onnxruntime-web": "^1.30.0"
+  }
+}
